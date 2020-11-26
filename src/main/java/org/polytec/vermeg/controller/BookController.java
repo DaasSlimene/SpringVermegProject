@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class BookController {
 	@Autowired
 	BookService bookService;
-	
+
 	
 	
 	@RequestMapping(value = "/getAll", method = RequestMethod.GET, produces = "application/json")
@@ -60,6 +60,7 @@ public class BookController {
 		 return "redirect:/getAllBooks";
 
 	}	
+	//calculprice
 	@RequestMapping(value = "/calculprice/{id}/{quantity}", method = RequestMethod.GET, headers = "Accept=application/json")
 	public double sommeprice(@PathVariable("id") int id,@PathVariable("quantity") double quantity) {
 		double sommeprice= bookService.getBook(id).getPrice()*quantity;
